@@ -1,0 +1,18 @@
+--- start symfony project
+symfony serve
+symfony serve:start
+symfony serve:stop
+
+-- make entity or update
+php bin/console make:entity
+
+
+-- for create megration
+php bin/console make:migration
+
+--for megration with database
+
+php bin/console doctrine:migrations:migrate
+
+-- crud of entity
+symfony console make:crud
