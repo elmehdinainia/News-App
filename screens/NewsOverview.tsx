@@ -43,7 +43,6 @@ const NewsOverview = (props:ComponentNavigationProps) => {
   });
            
               return <DetailsCard content={content} image_url={image_url} title={title}/>
-
     
 }
 

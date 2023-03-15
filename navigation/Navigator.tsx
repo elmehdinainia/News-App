@@ -5,6 +5,7 @@ import { Text, View } from "react-native";
 import Home from "../screens/Home";
 import Saved from "../screens/Saved";
 import NewsOverview from "../screens/NewsOverview";
+import Getstarted from "../screens/getStarted";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -21,12 +22,15 @@ function HomeScreen() {
 export default function AppNavigator() {
     return (
         <NavigationContainer>
-            <Stack.Navigator>
+            <Stack.Navigator initialRouteName="Getstaeter">
                 <Stack.Screen
                 options={{ headerShown: false }}
                 name="HomeScreen"
                 component={HomeScreen}
                 />
+               <Stack.Screen  name="Getstaeter" component={Getstarted}    options={{ headerShown: false }}
+              />
+
                 <Stack.Screen name="NewsOverview" component={NewsOverview} />
             </Stack.Navigator>
         </NavigationContainer>
