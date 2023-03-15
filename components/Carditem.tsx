@@ -1,7 +1,7 @@
 import { Pressable, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import {NewsData} from '../utils/types'
-import {Card,useTheme} from 'react-native-paper'
+import {Button, Card,useTheme} from 'react-native-paper'
 import { NavigationProp, Route } from '@react-navigation/native'
 
 type props = {
@@ -10,6 +10,9 @@ type props = {
    description:string,
    content:string,
    navigation:NavigationProp<Route>
+   handleDelete?: (val: string) => void;
+
+
 }
 
 // props:NewsData
@@ -37,6 +40,11 @@ const Carditem = (props:props) => {
               titleNumberOfLines={1}
               >
               </Card.Title>
+              {props.handleDelete && (
+              <Card.Actions>
+            <Button onPress={() => props.handleDelete && props.handleDelete(props.title)}>Delete</Button>
+              </Card.Actions>
+                )}
         </Card> 
         
   </Pressable>
