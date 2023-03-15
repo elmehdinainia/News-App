@@ -8,7 +8,8 @@ import CardItem from "../components/Carditem";
 
 const categories = ["Technology", "Sports", "Politics", "Health", "Business"];
 const API_KEY = "pub_18477212e751dc38cb21c5c2176e532c458f3";
-const Home = () => {
+const Home = (props:ComponentNavigationProps) => {
+
   const [newsData, setnewsData] = useState<NewsData[]>([]);
   const theme = useTheme();
   const [nextPage, setNextPage] = useState("")
@@ -81,10 +82,10 @@ const Home = () => {
         renderItem={({item}) => (
           <CardItem 
           title={item.title}
-          // navigation={props.navigation}
+          navigation={props.navigation}
           description={item.description}
           image_url={item.image_url}
-          // content={item.content}
+          content={item.content}
            />
         )}
       />
